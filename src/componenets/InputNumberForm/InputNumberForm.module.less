@@ -1,0 +1,60 @@
+@import "../components.less";
+.inputNumberForm {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
+
+  padding: 20px;
+  background-color: #fff;
+  .border;
+
+  display: grid;
+  gap: 10px;
+
+  grid-template: var(--sizes-xl) 1fr / 1fr 150px;
+  grid-template-areas: "input input" "numbers actions";
+
+  .input {
+    grid-area: input;
+    input {
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid black;
+      font-size: var(--sizes-xl);
+      text-align: right;
+    }
+  }
+  .numberPannel {
+    grid-area: numbers;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    gap: var(--sizes-s);
+    button {
+      height: auto;
+      font-size: 24pt;
+      background-color: var(--input-form-numbers);
+    }
+  }
+  .actionPanel {
+    display: grid;
+    grid-area: actions;
+    align-content: center;
+    gap: var(--sizes-s);
+    button {
+      text-transform: capitalize;
+      height: 80px;
+      font-size: 24pt;
+    }
+    .cancel {
+      background-color: var(--input-form-cancel);
+    }
+    .clear {
+      background-color: var(--input-form-clear);
+    }
+    .enter {
+      background-color: var(--input-form-enter);
+    }
+  }
+}

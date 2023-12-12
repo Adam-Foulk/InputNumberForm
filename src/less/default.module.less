@@ -1,0 +1,93 @@
+/* reset styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  background-color: #fff;
+  margin: 0;
+  // width: 100vw;
+  // height: 100vh;
+}
+
+.font {
+  font-family: "Verdana";
+  font-size: 14pt;
+}
+
+.main-color {
+  background-color: var(--main-background-color);
+}
+
+.active {
+  .main-color;
+}
+
+.corner-rounding {
+  border-radius: var(--border-radius);
+}
+
+.border {
+  .corner-rounding;
+  border: var(--border-width) solid var(--border-color);
+}
+
+.a95 {
+  color: var(--place-color-a95);
+}
+.m95 {
+  color: var(--place-color-m95);
+}
+.dp {
+  color: var(--place-color-dp);
+}
+.mdp {
+  color: var(--place-color-mdp);
+}
+.lpg {
+  color: var(--place-color-lpg);
+}
+
+/* Variables  */
+:root {
+  --main-background-color: #d4f5ffff;
+  --place-color-filling: #b0e8fa4d;
+  --place-color-disabled: #d6d6d64d;
+  --place-color-filled: #abffd74d;
+  --place-color-returning: #ffaeae4d;
+  --border-width: 0.5px;
+  --border-color: #797979ff;
+  --place-color-a95: rgb(255, 0, 0);
+  --place-color-m95: rgb(255, 166, 0);
+  --place-color-dp: rgb(0, 132, 255);
+  --place-color-mdp: rgb(16, 197, 0);
+  --place-color-lpg: rgb(0, 225, 255);
+  --product-fast-food: #ff00001a;
+  --product-healthy-food: #00ff851a;
+  --product-baverages: #db00ff1a;
+  --product-bakery: #ff7a001a;
+  --product-preview: #fffb0080;
+  --product-home: #ff33005d;
+  --input-form-cancel: #ff00000d;
+  --input-form-clear: #ffc7001a;
+  --input-form-enter: #00c1ff1a;
+  --input-form-numbers: #00bfff10;
+  --sizes-s: 8px;
+  --sizes-xs: 4px;
+  --sizes-m: 16px;
+  --sizes-l: 24px;
+  --sizes-xl: 32px;
+}
+
+/* Aliases  */
+:root {
+  --border-radius: var(--sizes-xs);
+  --table-col-padding: var(--sizes-s);
+  --product-catalog-item-v-padding: var(--sizes-xs);
+  --product-catalog-item-h-paddings: var(--sizes-s);
+  --product-catalog-item-gap: var(--sizes-xs);
+  --place-indent-gap: var(--sizes-xs);
+}
