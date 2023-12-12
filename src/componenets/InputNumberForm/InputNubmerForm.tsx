@@ -1,25 +1,31 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import styles from "./InputNumberForm.module.less";
 import { Button, Input } from "@mantine/core";
-import { useInputNumberStore as useInputNumber } from "./InputNumberStore";
 
 type InputNumberFormProps = {
+  display: boolean;
+  setDisplay: (value: boolean) => void;
   setNumber: (number: number) => void;
 };
 
-const InputNumberForm: FC<InputNumberFormProps> = ({ setNumber }) => {
-  const addText = useInputNumber((state) => state.addText);
-  const close = useInputNumber((state) => state.close);
-  const clear = useInputNumber((state) => state.clear);
-  const value = useInputNumber((state) => state.value);
+const InputNumberForm: FC<InputNumberFormProps> = ({ setNumber, setDisplay, display }) => {
+  const [value, setValue] = useState('');
+
+  const addText = (event: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(event)
+    if(!value.includes(".") || event.target.innerText !== ".")
+      setValue(value + event.target.innerText)
+  }
+  const close = () => {setValue(''); setDisplay(false)}
+  const clear = () => {setValue('')}
   const enterHandler = () => {
+    if (value[0] === "." && value.length === 1) return;
     setNumber(Number(value));
     close();
   };
-  const display = useInputNumber((state) => state.display);
 
-  if (display)
-    return (
+  if(!display) return
+  return (
       <div className={styles.inputNumberForm}>
         <Input
           variant="unstyled"
