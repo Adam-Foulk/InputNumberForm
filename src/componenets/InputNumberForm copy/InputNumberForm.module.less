@@ -1,25 +1,28 @@
 @import "../components.less";
 
-.modal {
   .inputNumberForm {
-
-    margin: 4px;
-
     width: 500px;
     height: 500px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+  
+    padding: 20px;
+    .border;
+  
     display: grid;
     gap: 10px;
   
-    grid-template: 36px 1fr / 1fr 150px;
+    grid-template: var(--sizes-xl) 1fr / 1fr 150px;
     grid-template-areas: "input input" "numbers actions";
   
     .input {
       grid-area: input;
-      border-bottom: 1px solid black;
       input {
-        font-size: 36px;
         border-radius: 0;
         border: none;
+        border-bottom: 1px solid black;
+        font-size: var(--sizes-xl);
         text-align: right;
       }
     }
@@ -44,4 +47,3 @@
       }
     }
   }
-}
