@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import styles from "./InputNumberForm.module.less";
-import { Button, Input } from "@mantine/core";
+import { Button, Container, Input } from "@mantine/core";
 
 type InputNumberFormProps = {
   display: boolean;
@@ -26,7 +26,7 @@ const InputNumberForm: FC<InputNumberFormProps> = ({ setNumber, setDisplay, disp
 
   if(!display) return
   return (
-      <div className={styles.inputNumberForm}>
+      <Container bg="var(--mantine-color-white)" className={styles.inputNumberForm}>
         <Input
           variant="unstyled"
           className={styles.input}
@@ -34,59 +34,59 @@ const InputNumberForm: FC<InputNumberFormProps> = ({ setNumber, setDisplay, disp
           type="text"
         />
         <div className={styles.numberPannel}>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             7
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             8
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             9
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             4
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             5
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             6
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             1
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             2
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             3
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             0
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             00
           </Button>
-          <Button variant="default" onClick={addText}>
+          <Button h="auto" variant="light" onClick={addText}>
             .
           </Button>
         </div>
         <div className={styles.actionPanel}>
-          <Button variant="default" onClick={close} className={styles.cancel}>
+          <Button h="80px" variant="light" color="rgba(255, 54, 54, 1)" onClick={close} >
             cancel
           </Button>
-          <Button variant="default" onClick={clear} className={styles.clear}>
+          <Button h="80px" variant="light" color="rgba(255, 153, 0, 1)" onClick={clear} >
             clear
           </Button>
           <Button
-            variant="default"
+            h="80px" variant="light"
+            color="rgba(19, 168, 101, 1)"
             onClick={enterHandler}
-            className={styles.enter}
           >
             enter
           </Button>
         </div>
-      </div>
+      </Container>
     );
 };
 
