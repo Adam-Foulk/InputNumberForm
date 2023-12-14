@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
-import styles from "./InputNumberForm.module.less";
-import { Button, Input, Modal } from "@mantine/core";
+import { Button, Group, Input, Modal, Stack } from "@mantine/core";
 
 type InputNumberFormProps = {
   modalOpened: boolean;
@@ -25,68 +24,81 @@ const InputNumberForm: FC<InputNumberFormProps> = ({ setNumber, closeModal, moda
 
   if(!modalOpened) return
   return (
-    <Modal opened={modalOpened} size="auto" onClose={close} withCloseButton={false} className={styles.modal} centered>
-      <div className={styles.inputNumberForm}>
-          <Input
-            variant="unstyled"
-            className={styles.input}
-            value={value}
-            type="text"
-          />
-          <div className={styles.numberPannel}>
-            <Button h="auto" variant="light" onClick={addText}>
+    <Modal opened={modalOpened} size="auto" onClose={close} withCloseButton={false} centered>
+        <Input
+          size="lg"
+          variant="default"
+          value={value}
+          type="text"
+          mb={10}
+        />
+        <Group gap={10}>
+        <Stack
+          justify="flex-start"
+          gap="5px"
+        >
+          <Group gap="5px">
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               7
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               8
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               9
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+          </Group>
+          <Group gap="5px">
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               4
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               5
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               6
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+          </Group>
+          <Group gap="5px">
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               1
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               2
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               3
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+          </Group>
+          <Group gap="5px">
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               0
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               00
             </Button>
-            <Button h="auto" variant="light" onClick={addText}>
+            <Button fz="24pt" w="80px" h="80px" variant="light" onClick={addText}>
               .
-            </Button>
-          </div>
-          <div className={styles.actionPanel}>
-            <Button h="80px" variant="light" color="rgba(255, 54, 54, 1)" onClick={close} >
-              cancel
-            </Button>
-            <Button h="80px" variant="light" color="rgba(255, 153, 0, 1)" onClick={clear} >
-              clear
-            </Button>
-            <Button
-              h="80px" variant="light"
-              color="rgba(19, 168, 101, 1)"
-              onClick={enterHandler}
-            >
-              enter
-            </Button>
-          </div>
-        </div>
+            </Button> 
+          </Group>
+        </Stack>
+        <Stack w={150} gap={10}>
+          <Button fz="24pt" h="45px" variant="light" color="rgba(255, 54, 54, 1)" onClick={close} >
+            Cancel
+          </Button>
+          <Button fz="24pt" h="45px" variant="light" color="rgba(255, 153, 0, 1)" onClick={clear} >
+            Clear
+          </Button>
+          <Button fz="24pt"
+            h="45px" variant="light"
+            color="rgba(19, 168, 101, 1)"
+            onClick={enterHandler}
+          >
+            Enter
+          </Button>
+        </Stack>
+        </Group>
+
     </Modal>
     );
 };
