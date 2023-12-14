@@ -83,14 +83,14 @@ const InputNumberForm: FC<InputNumberFormProps> = ({ setNumber, closeModal, moda
           </Group>
         </Stack>
         <Stack w={150} gap={10}>
-          <Button fz="24pt" h="45px" variant="light" color="rgba(255, 54, 54, 1)" onClick={close} >
+          <Button fz="24pt" h="80px" variant="light" color="rgba(255, 54, 54, 1)" onClick={close} >
             Cancel
           </Button>
-          <Button fz="24pt" h="45px" variant="light" color="rgba(255, 153, 0, 1)" onClick={clear} >
+          <Button fz="24pt" h="80px" variant="light" color="rgba(255, 153, 0, 1)" onClick={clear} >
             Clear
           </Button>
           <Button fz="24pt"
-            h="45px" variant="light"
+            h="80px" variant="light"
             color="rgba(19, 168, 101, 1)"
             onClick={enterHandler}
           >
